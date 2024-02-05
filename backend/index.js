@@ -2,9 +2,9 @@
 
 // import express - is for building the Rest apis
 import express from "express";
-import Stripe from "Stripe";
+import Stripe from "stripe";
 
-var stripe = Stripe("sk_test_51ObP5UAqhf0tk1zPf7AImRUpZEVxVfA6Tw93ogwXwyxXvkdBy55GGVkmgD8geuUrWQyBabDYMZjhHD3u8l42t0xL00a7NQ0sD0");
+var stripe = stripe("sk_test_51ObP5UAqhf0tk1zPf7AImRUpZEVxVfA6Tw93ogwXwyxXvkdBy55GGVkmgD8geuUrWQyBabDYMZjhHD3u8l42t0xL00a7NQ0sD0");
 
 
 // import body-parser - helps to parse the request and create the req.body object
