@@ -11,17 +11,19 @@
 
             <div class="icons ">
                 <img src="../assets/images/icon-1.png" alt="">
-                <h3>7:00am to 10:00pm</h3>
+                <h3>10:00am to 9:00pm</h3>
             </div>
 
             <div class="icons">
                 <img src="../assets/images/icon-2.png" alt="">
-                <h3>+84 123 123 123</h3>
+                <h3>(502) 709-4292</h3>
             </div>
 
             <div class="icons">
-                <img src="../assets/images/icon-3.png" alt="">
-                <h3>02 Duong Khue, Cau Giay, Ha Noi, Viet Nam</h3>
+                <a href="https://maps.app.goo.gl/TMXH7Kn4UUkbmjzd8">
+                <img src="../assets/images/icon-3.png" alt=""/>
+                <h3>3123 S 2nd St, Louisville, KY 40208</h3>
+                </a>
             </div>
 
         </div>
@@ -154,16 +156,12 @@ export default {
                 this.errorObj.phoneErr.push('Entering phone number is required');
             }
             else {
-                if (!this.orderObj.phone.startsWith('84')) {
-                    this.errorObj.phoneErr.push('Phone numbers must start with 84');
-                }
-
                 if (!/[0-9]{10}/.test(this.orderObj.phone)) {
                     this.errorObj.phoneErr.push('Phone numbers can only contain numbers');
                 }
 
-                if (this.orderObj.phone.length != 11) {
-                    this.errorObj.phoneErr.push('Phone numbers must have exactly 11 digits');
+                if (this.orderObj.phone.length != 10) {
+                    this.errorObj.phoneErr.push('Phone numbers must have exactly 10 digits');
                 }
             }
 
@@ -226,7 +224,7 @@ export default {
                 }
 
                 if (dateInput.getHours() < 7 || dateInput.getHours() > 22) {
-                    this.errorObj.whenErr.push("Store open from 7:00 AM to 10:00 PM everyday");
+                    this.errorObj.whenErr.push("Store open from 10:00 AM to 9:00 PM everyday");
                 }
             }
 

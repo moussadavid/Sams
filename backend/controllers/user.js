@@ -1,9 +1,9 @@
 // import functions from User model
 
 import {
-    getAllUser,
-    getUserByEmail,
-    insertUser
+  getAllUser,
+  getUserByEmail,
+  insertUser,
 } from "../models/UserModel.js";
 
 // get all Users
@@ -19,7 +19,7 @@ export const allUsers=(req,res)=>{
 
 
 // get single user
-export const showAUser = (req,res)=>{
+export const showAUser = (req, res) => {
     getUserByEmail(req.params.email,(err,results)=> {
         if (err) {
             res.send(err);

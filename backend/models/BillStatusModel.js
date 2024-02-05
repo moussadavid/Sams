@@ -28,15 +28,18 @@ export const insertBillStatus = (data,result) => {
 
 // get all Bills Status
 export const getBillsByUser = (id,result) => {
-    db.query("SELECT * FROM billstatus WHERE user_id = ?",id, (err,results)=> {
-        if (err){
-            console.log(err);
-            result(err,null);
+    db.query(
+      "SELECT * FROM billstatus WHERE bill_paid ='true' and user_id = ?",
+      id,
+      (err, results) => {
+        if (err) {
+          console.log(err);
+          result(err, null);
+        } else {
+          result(null, results);
         }
-        else{
-            result(null,results);
-        }
-    });
+      }
+    );
 };
 
 

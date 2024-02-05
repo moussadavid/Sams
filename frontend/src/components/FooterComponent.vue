@@ -1,42 +1,42 @@
 <template>
     <div class="footer">
-        <div class="news-letter">
+        <!-- <div class="news-letter">
             <h3>Receive event notifications</h3>
             <form onsubmit="event.preventDefault();">
                 <input type="email" name="useremailreceiveinfo" placeholder="enter your email"
                     id="useremailreceiveinfo">
                 <input type="submit" value="subscribe">
             </form>
-        </div>
+        </div> -->
 
         <div class="box-container">
 
-            <div class="box">
+            <!-- <div class="box">
                 <h3>our menu</h3>
                 <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> taco</router-link>
                 <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> burrito</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> nachos</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Sandwiches</router-link>
                 <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> side food
                 </router-link>
                 <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> dessert</router-link>
                 <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> drink</router-link>
-            </div>
+            </div> -->
 
             <div class="box">
                 <h3>quick links</h3>
                 <router-link @click="scrollToTop()" to="/"> <i class="fas fa-arrow-right"></i> home</router-link>
                 <router-link @click="scrollToTop()" to="/about"> <i class="fas fa-arrow-right"></i> about</router-link>
-                <router-link @click="scrollToTop()" to="/promotions"> <i class="fas fa-arrow-right"></i> promotions
-                </router-link>
+                <!-- <router-link @click="scrollToTop()" to="/promotions"> <i class="fas fa-arrow-right"></i> promotions
+                </router-link> -->
                 <router-link @click="scrollToTop()" to="/menu"> <i class="fas fa-arrow-right"></i> menu</router-link>
-                <router-link @click="scrollToTop()" to="/table"> <i class="fas fa-arrow-right"></i> book a table
-                </router-link>
+                <!-- <router-link @click="scrollToTop()" to="/table"> <i class="fas fa-arrow-right"></i> book a table
+                </router-link> -->
             </div>
 
             <div class="box">
                 <h3>extra links</h3>
                 <div v-if="user">
-                    <router-link @click="scrollToTop()" to="/cart"> <i class="fas fa-arrow-right"></i> my order
+                    <router-link @click="scrollToTop()" to="/cart"> <i class="fas fa-arrow-right"></i> my cart
                     </router-link>
                     <router-link @click="scrollToTop()" to="/myorder"> <i class="fas fa-arrow-right"></i> my orders
                     </router-link>
@@ -51,7 +51,8 @@
 
             <div class="box">
                 <h3>opening hours</h3>
-                <p>everyday : 7:00am to 10:00pm</p>
+                <p>Monday - Saturday : 10:00 AM to 9:00 PM</p>
+                <p>Sunday : 11:00 AM to 9:00 PM</p>
 
             </div>
 
@@ -60,10 +61,10 @@
         <div class="bottom">
 
             <div class="share">
-                <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                <a href="https://twitter.com/?lang=en" class="fab fa-twitter"></a>
+                <a href="https://www.facebook.com/samsgyrosky" class="fab fa-facebook-f" target="_blank"></a>
+                <!-- <a href="https://twitter.com/?lang=en" class="fab fa-twitter"></a>
                 <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                <a href="https://www.pinterest.com/" class="fab fa-pinterest"></a>
+                <a href="https://www.pinterest.com/" class="fab fa-pinterest"></a> -->
             </div>
 
         </div>

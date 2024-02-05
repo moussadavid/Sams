@@ -21,7 +21,8 @@
                 <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between card-summary">
 
                     <div class="w-100 text-center py-1 px-2"><span>Total:</span> ${{ b.bill_total }}</div>
-                    <div class="w-100 text-center py-1 px-2"><span>Address:</span>{{ " " + b.bill_address }}
+                    <div class="w-100 text-center py-1 px-2">
+                        <!-- <span>Address:</span>{{ " " + b.bill_address }} -->
                     </div>
                     <div class="w-100 text-center py-1 px-2"><span>Phone:</span>{{ " " + b.bill_phone }}
                     </div>
@@ -51,13 +52,13 @@
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-route"></i></div>
                             </div>
-                            <h4 class="step-title">Delivering</h4>
+                            <h4 class="step-title">Ready for pickup</h4>
                         </div>
                         <div class="step" :class="b.bill_status >= 5 ? 'completed' : ''">
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-house"></i></div>
                             </div>
-                            <h4 class="step-title">Delivered</h4>
+                            <h4 class="step-title">Picked Up</h4>
                         </div>
                     </div>
                 </div>
@@ -92,7 +93,7 @@ export default {
 
     data() {
         return {
-            avaiableStatus: ["cancel", "confirmed", "preparing", "checking", "delivering", "delivered"],
+            avaiableStatus: ["cancel", "confirmed", "preparing", "checking", "ready", "completed"],
             allBills: [],
 
             showOrderDetails: false,

@@ -1,5 +1,13 @@
-// import express 
+// import express
+
+
 import express from "express";
+
+// const app = express();
+// app.use(express.static("public"));
+
+
+
 // import functions from controller 
 import {
     showFoods,
@@ -10,8 +18,9 @@ import {
 } from "../controllers/food.js";
 
 import {
-    showAUser,
-    createAccount
+  showAUser,
+  createAccount,
+allUsers
 } from "../controllers/user.js";
 
 import {
@@ -32,14 +41,19 @@ import {
 } from "../controllers/billdetails.js";
 
 import {
-    showNewestStatusId,
-    createBillStatus, 
-    getAllBillsByUser,
-    getAllBillsByBill,
-    getAllBills,
-    updateBillStatus,
-    updateBillPaid,
-    cancelBillStatus
+  checkout,
+} from "../controllers/checkout.js";
+
+
+import {
+  showNewestStatusId,
+  createBillStatus,
+  getAllBillsByUser,
+  getAllBillsByBill,
+  getAllBills,
+  updateBillStatus,
+  updateBillPaid,
+  cancelBillStatus,
 } from "../controllers/billstatus.js";
 
 // init express router
@@ -66,7 +80,9 @@ router.delete("/api/foods/:id", deleteFood);
 ////////////////////////// USER ////////////////////////////////
 // get all user
 router.get("/api/users/:email", showAUser);
+// router.get("/api/users/:email/:pass", showAUserWithEmailPass);
 
+router.get("/api/users/", allUsers);
 // create account
 router.post("/api/users/", createAccount);
 
@@ -115,6 +131,8 @@ router.put("/api/billstatus/paid/:id", updateBillPaid);
 router.put("/api/billstatus/cancel/:id", cancelBillStatus);
 
 
+////////////////////////// checkout ////////////////////////////////
+router.post("/api/create-checkout-session", checkout);
 
 
 

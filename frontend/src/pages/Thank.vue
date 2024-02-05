@@ -31,8 +31,19 @@
 
 
 <script>
+import axios from "axios";
 export default {
     name: 'Thank',
+    mounted() {
+    this.updateBillPaid();
+  },
+    methods: {
+        async updateBillPaid() {
+            await axios.put('/billstatus/paid/' + this.$route.query.bill_id);
+            await axios.delete("/cartItem/" + this.$route.query.user_id);
+
+        },
+    }
 }
 </script>
 <script setup>

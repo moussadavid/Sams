@@ -54,7 +54,9 @@ export default {
         },
 
         async getMatchUser(email) {
-            let data = await axios.get('/users/' + email);
+                        let data = await axios.get('/users/' + email);
+
+            // let data = await axios.get('/users/' + email+ "/" +this.loginObj.pass);
             this.matchUser = data.data;
         },
 

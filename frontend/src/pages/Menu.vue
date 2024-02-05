@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-4 col-12 filter-box">
+            <div class="col-sm-2 col-12 filter-box">
                 <div class="row search-box">
                     <input type="text" class="search-input" v-model="foodObj.name" placeholder="Search.." />
                 </div>
@@ -15,7 +15,7 @@
                     <p @click="displayFilterDrop">Filter<span v-if="showDropDown">x</span><span v-else>v</span></p>
                 </div>
 
-                <div class="row filter-heading">
+                <!-- <div class="row filter-heading">
                     <h1>Status</h1>
                 </div>
 
@@ -67,7 +67,7 @@
 
                     </ul>
                     <hr />
-                </div>
+                </div> -->
 
                 <div class="row filter-heading">
                     <h1>Price</h1>
@@ -114,7 +114,7 @@
                     <hr />
                 </div>
 
-
+<!-- 
                 <div class="row filter-heading">
                     <h1>Type</h1>
                 </div>
@@ -136,26 +136,30 @@
                         </li>
 
                     </ul>
-                </div>
+                </div> -->
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-10">
                 <div class="row">
                     <div class="menu-tabs">
                         <input type="button" id="allFilterFoodBtn" name="allFilterFoodBtn" value="all"
                             class="menu-tab-item" @click="filterFoodBtn($event)" />
-                        <input type="button" id="tacoFilterFoodBtn" name="tacoFilterFoodBtn" class="menu-tab-item"
-                            value="taco" @click="filterFoodBtn($event)" />
-                        <input type="button" id="burritoFilterFoodBtn" name="burritoFilterFoodBtn" class="menu-tab-item"
-                            value="burrito" @click="filterFoodBtn($event)" />
-                        <input type="button" id="nachosFilterFoodBtn" name="nachosFilterFoodBtn" class="menu-tab-item"
-                            value="nachos" @click="filterFoodBtn($event)" />
+                            <input type="button" id="sandwichesFilterFoodBtn" name="sandwichesFilterFoodBtn" class="menu-tab-item"
+                            value="sandwiches" @click="filterFoodBtn($event)" />
+                        <input type="button" id="plattersFilterFoodBtn" name="plattersFilterFoodBtn" class="menu-tab-item"
+                            value="platters" @click="filterFoodBtn($event)" />
+                        <input type="button" id="comboFilterFoodBtn" name="comboFilterFoodBtn" class="menu-tab-item"
+                            value="combo" @click="filterFoodBtn($event)" />
+                                                <input type="button" id="saladFilterFoodBtn" name="saladFilterFoodBtn" class="menu-tab-item"
+                            value="salad" @click="filterFoodBtn($event)" />
                         <input type="button" id="sidesFilterFoodBtn" name="sidesFilterFoodBtn" class="menu-tab-item"
                             value="sides" @click="filterFoodBtn($event)" />
                         <input type="button" id="dessertFilterFoodBtn" name="dessertFilterFoodBtn" class="menu-tab-item"
                             value="dessert" @click="filterFoodBtn($event)" />
                         <input type="button" id="drinkFilterFoodBtn" name="drinkFilterFoodBtn" class="menu-tab-item"
                             value="drink" @click="filterFoodBtn($event)" />
+                        <input type="button" id="kidsFilterFoodBtn" name="kidsFilterFoodBtn" class="menu-tab-item"
+                            value="kids" @click="filterFoodBtn($event)" />
                     </div>
                 </div>
 
@@ -223,6 +227,8 @@
 <script>
 import QuickView from "@/components/QuickView.vue";
 import { mapState } from "vuex";
+import config from '../../config/data.js';
+
 export default {
     name: "Menu",
 
@@ -234,7 +240,7 @@ export default {
             showDropDown: false,
             sendId: null,
 
-            perPage: 6,
+            perPage: config.itemsPerPage,
             pageNum: 0,
             previousCategoryClicked: "",
             previousPriceClicked: "",
