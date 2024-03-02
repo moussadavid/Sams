@@ -166,7 +166,7 @@
                 <div class="row box-container">
                     <div v-for="(f, index) in currentPageItems" :key="index">
                         <div class="box">
-                            <a href="" class="fas fa-heart"></a>
+                            <!-- <a href="" class="fas fa-heart"></a> -->
                             <div class="image">
                                 <img :src="require(`../assets/images/${f.food_src}`)" alt="" />
                             </div>

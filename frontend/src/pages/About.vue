@@ -10,7 +10,7 @@
         <img src="../assets/images/chef.jpg" alt="" />
         <div class="about-content-text">
           <p>
-            Our restaurant Sam's Gyros was founded in 2015 in Louisville, KY.
+            Our restaurant Sam's Gyros was founded in 2012 in Louisville, KY.
             After that, thanks to the support of our customers, our brand has
             been popularized... 
             </p>

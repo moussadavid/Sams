@@ -14,7 +14,7 @@ import {
     showFoodById,
     createFood,
     updateFood,
-    deleteFood,
+    // deleteFood,
 } from "../controllers/food.js";
 
 import {
@@ -73,7 +73,7 @@ router.post("/api/foods", createFood);
 router.put("/api/foods/:id", updateFood);
 
 // delete Food
-router.delete("/api/foods/:id", deleteFood);
+// router.delete("/api/foods/:id", deleteFood);
 
 
 

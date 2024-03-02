@@ -4,7 +4,13 @@
 import express from "express";
 import Stripe from "stripe";
 
+<<<<<<< Updated upstream
 var stripe = Stripe("sk_test_51ObP5UAqhf0tk1zPf7AImRUpZEVxVfA6Tw93ogwXwyxXvkdBy55GGVkmgD8geuUrWQyBabDYMZjhHD3u8l42t0xL00a7NQ0sD0");
+=======
+var stripe = Stripe(
+  "sk_test_51ObP5UAqhf0tk1zPf7AImRUpZEVxVfA6Tw93ogwXwyxXvkdBy55GGVkmgD8geuUrWQyBabDYMZjhHD3u8l42t0xL00a7NQ0sD0"
+);
+>>>>>>> Stashed changes
 
 
 // import body-parser - helps to parse the request and create the req.body object

@@ -8,108 +8,175 @@
         <slot></slot>
       </h2>
       <div class="product-detail d-flex">
-        <div class="image">
+        <!-- <div class="image">
           <img :src="require(`../assets/images/${f.food_src}`)" alt="" />
-        </div>
+        </div> -->
         <div class="content">
           <!-- <p class="desc">{{f .food_desc }}</p> -->
           <p class="money">
             ${{ parseFloat(f.food_price) - parseFloat(f.food_discount)
-            }}<span v-if="parseFloat(f.food_discount) > 0"
-              >${{ parseFloat(f.food_price) }}</span
-            >
+            }}<span v-if="parseFloat(f.food_discount) > 0">${{ parseFloat(f.food_price) }}</span>
           </p>
           <div class="qty">
             <label for="qty">Quantity:</label>
-            <input
-              type="number"
-              name="qty"
-              id="qty"
-              value="1"
-              min="1"
-              max="1000"
-              @change="onQtyChange($event)"
-            />
+            <input type="number" name="qty" id="qty" value="1" min="1" max="1000" @change="onQtyChange($event)" />
           </div>
-          <div v-if="f.food_category === 'platters'||f.food_category === 'sandwiches' || f.food_category === 'salad'">
+          <div v-if="f.food_category === 'platters' || f.food_category === 'sandwiches' || f.food_category === 'salad'">
             <!-- <p>
               Side Rice
               <input type="checkbox" id="chkFrenchFries" value="French Fries (no Rice)" v-model="side_salad" />
               Add French Fries (no Rice)
             </p> -->
+
             <p>
               Side Salad
-              <br />
-              <input type="checkbox" id="chkLettuce"  value="Lettuce" v-model="side_salad" />
-              Lettuce
-              <input type="checkbox" id="chkTabbouleh" value="Tabbouleh" v-model="side_salad"/>
-              Tabbouleh
-              <input type="checkbox" id="chkCucumber" value="Cucumber" v-model="side_salad" />
-              Cucumber
-              <br />
-              <input type="checkbox" id="chkOnion" value="Onion" v-model="side_salad"/>
-              Onion
-              <input type="checkbox" id="chkTomato" value="Tomato" v-model="side_salad"/>
-              Tomato
-              <input type="checkbox" id="chkFetaCheese" value="Feta Cheese" v-model="side_salad"/>
-              Feta Cheese
-               <br />
-              <input type="checkbox" id="chkBananaPepper" value="Banana Pepper" v-model="side_salad"/>
-              Banana Pepper
-              <input type="checkbox" id="chkJalapeno" value="Jalapeño" v-model="side_salad"/>
-              Jalapeño
-              <input type="checkbox" id="chkBlackOlives" value="Black Olives" v-model="side_salad"/>
-              Black Olives <br />
-              <input type="checkbox" id="chkSauce" value="Sauce on it" v-model="side_salad"/>
-             Sauce on it
-              <input type="checkbox" id="chkSauceside" value="Sauce on side" v-model="side_salad"/>
-             Sauce on side
+            <table>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkLettuce" value="Lettuce" v-model="side_salad" />
+                  Lettuce
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkTabbouleh" value="Tabbouleh" v-model="side_salad" />
+                  Tabbouleh
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkCucumber" value="Cucumber" v-model="side_salad" />
+                  Cucumber
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkOnion" value="Onion" v-model="side_salad" />
+                  Onion
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkTomato" value="Tomato" v-model="side_salad" />
+                  Tomato
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkFetaCheese" value="Feta Cheese" v-model="side_salad" />
+                  Feta Cheese
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkBananaPepper" value="Banana Pepper" v-model="side_salad" />
+                  Banana Pepper
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkJalapeno" value="Jalapeño" v-model="side_salad" />
+                  Jalapeño
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkBlackOlives" value="Black Olives" v-model="side_salad" />
+                  Black Olives
+                </td>
+
+              </tr>
+              <tr>
+                              <td style="padding-right:10px;">
+                    <input type="checkbox" id="chkSauce" value="Sauce on it" v-model="side_salad" />
+                    Sauce on it
+                  </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkSauceside" value="Sauce on side" v-model="side_salad" />
+                  Sauce on side
+                </td>
+              </tr>
+            </table>
             </p>
           </div>
           <div v-else-if="f.food_category === 'combo'">
-              <p>
-              
+            <p>
+
               <input type="radio" id="chkFrenchFries" value="French Fries" v-model="side_Rice" />
               French Fries
               <input type="radio" id="chkRice" value="Rice" v-model="side_Rice" />
               Rice
             </p>
-                        <p>
+            <p>
               Side Salad
-              <br />
-              <input type="checkbox" id="chkLettuce"  value="Lettuce" v-model="side_salad" />
-              Lettuce
-              <input type="checkbox" id="chkTabbouleh" value="Tabbouleh" v-model="side_salad"/>
-              Tabbouleh
-              <input type="checkbox" id="chkCucumber" value="Cucumber" v-model="side_salad" />
-              Cucumber
-              <br />
-              <input type="checkbox" id="chkOnion" value="Onion" v-model="side_salad"/>
-              Onion
-              <input type="checkbox" id="chkTomato" value="Tomato" v-model="side_salad"/>
-              Tomato
-              <input type="checkbox" id="chkFetaCheese" value="Feta Cheese" v-model="side_salad"/>
-              Feta Cheese
-               <br />
-              <input type="checkbox" id="chkBananaPepper" value="Banana Pepper" v-model="side_salad"/>
-              Banana Pepper
-              <input type="checkbox" id="chkJalapeno" value="Jalapeño" v-model="side_salad"/>
-              Jalapeño
-              <input type="checkbox" id="chkBlackOlives" value="Black Olives" v-model="side_salad"/>
-              Black Olives <br />
-              <input type="checkbox" id="chkSauce" value="Sauce on it" v-model="side_salad"/>
-            Sauce on it
-              <input type="checkbox" id="chkSauceside" value="Sauce on side" v-model="side_salad"/>
-            Sauce on side
+            <table>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkLettuce" value="Lettuce" v-model="side_salad" />
+                  Lettuce
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkTabbouleh" value="Tabbouleh" v-model="side_salad" />
+                  Tabbouleh
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkCucumber" value="Cucumber" v-model="side_salad" />
+                  Cucumber
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkOnion" value="Onion" v-model="side_salad" />
+                  Onion
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkTomato" value="Tomato" v-model="side_salad" />
+                  Tomato
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkFetaCheese" value="Feta Cheese" v-model="side_salad" />
+                  Feta Cheese
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkBananaPepper" value="Banana Pepper" v-model="side_salad" />
+                  Banana Pepper
+                </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkJalapeno" value="Jalapeño" v-model="side_salad" />
+                  Jalapeño
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkBlackOlives" value="Black Olives" v-model="side_salad" />
+                  Black Olives
+                </td>
+               
+              </tr>
+              <tr>
+               <td style="padding-right:10px;">
+                    <input type="checkbox" id="chkSauce" value="Sauce on it" v-model="side_salad" />
+                    Sauce on it
+                  </td>
+                <td style="padding-right:10px;">
+                  <input type="checkbox" id="chkSauceside" value="Sauce on side" v-model="side_salad" />
+                  Sauce on side
+                </td>
+              </tr>
+            </table>
             </p>
           </div>
           <!-- <div v-else-if="type === 'C'">C</div>
           <div v-else>Not A/B/C</div> -->
-                <div >
-                    <label for="uMessage">special requests</label>
-                    <textarea placeholder="May have an additional charge to be paid at the restaurant" name="uMessage"
-                        id="uMessage" cols="40" rows="3" v-model="special_requests" ></textarea>
-                </div>
+          <table style="width: 100%;">
+            <tr style="width: 100%;">
+              <td style="text-align: center;padding-right: 10px;">
+                <label for="uMessage">Note</label>
+
+              </td>
+              <td>
+                <textarea placeholder="May have an additional charge to be paid at the restaurant" style="width: 100%;" name="uMessage"
+                  id="uMessage" rows="3" v-model="special_requests"></textarea>
+              </td>
+            </tr>
+          </table>
+
           <button class="btn" @click="addToCart">Add to cart</button>
         </div>
       </div>
@@ -122,11 +189,7 @@
         <slot></slot>
       </h2>
       <div class="link-to-login" style="text-align: center; margin-top: 120px">
-        <router-link
-          class="btn"
-          to="/login"
-          style="padding: 28px; font-size: 24px"
-          >login now
+        <router-link class="btn" to="/login" style="padding: 28px; font-size: 24px">login now
         </router-link>
       </div>
     </div>
@@ -146,7 +209,7 @@ export default {
       qty: 1,
       side_salad: [],
       side_Rice: [],
-      special_requests:"",
+      special_requests: "",
     };
   },
 
@@ -171,21 +234,21 @@ export default {
     },
 
     async addToCart() {
-        let data = {
-          user_id: parseInt(this.user.user_id),
-          food_id: parseInt(this.food),
-          item_qty: parseInt(this.qty),
-          side_salad: this.side_salad.toString() + " / " + this.side_Rice.toString(),
-          special_requests :this.special_requests,
-        };
+      let data = {
+        user_id: parseInt(this.user.user_id),
+        food_id: parseInt(this.food),
+        item_qty: parseInt(this.qty),
+        side_salad: this.side_salad.toString() + " / " + this.side_Rice.toString(),
+        special_requests: this.special_requests,
+      };
 
-        await axios.post("/cartItem/", data);
-        this.$refs.alert.showAlert(
-          "success",
-          "Thank you!",
-          "Add To Cart Successfully !"
-        );
-     // }
+      await axios.post("/cartItem/", data);
+      this.$refs.alert.showAlert(
+        "success",
+        "Thank you!",
+        "Add To Cart Successfully !"
+      );
+      // }
     },
   },
 
@@ -211,7 +274,7 @@ export default {
 }
 
 .quick-view .quick-view-inner {
-  width: 45vw;
+  width: auto;
   height: auto;
   scroll-behavior: smooth;
   scroll-padding-top: 8.5rem;
@@ -295,7 +358,7 @@ export default {
     margin-top: 50px !important;
   }
 
-  .link-to-login > a {
+  .link-to-login>a {
     padding: 20px !important;
     font-size: 18px !important;
   }

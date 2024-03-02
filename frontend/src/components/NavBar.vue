@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link @click="scrollToTop()" to="/" class="logo"
-      ><img src="../assets/images/samsgyros-logo.png" alt=""
+      ><img src="../assets/images/logo.png" alt=""
     /></router-link>
 
     <nav class="navbar">

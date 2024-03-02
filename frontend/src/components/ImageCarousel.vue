@@ -8,11 +8,7 @@
 export default {
   data() {
     return {
-      images: [
-        '1.jpg',
-        '2.jpg',
-        '3.jpg',
-      ],
+      images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
       currentIndex: 0,
       intervalId: null,
       intervalDuration: 3000, // Adjust this value for the time between image changes in milliseconds
