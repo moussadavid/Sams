@@ -184,7 +184,7 @@
                
                 </div>
                 <h3 style="color: red;">
-                   <span v-if="!isButtonEnabled">we are sorry the online order from 10 AM till 7:30 PM</span></h3>
+                   <span v-if="isButtonDisabled">we are sorry the online order from 10 AM till 7:30 PM</span></h3>
               </div>
             </div>
 
